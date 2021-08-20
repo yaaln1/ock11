@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 const {check, validationResult} = require('express-validator')
 const User = require ('../models/User')
 const router = Router()
+const ip = require ('ip')
 
 // /api/auth/register
 router.post('/register',
@@ -74,7 +75,8 @@ router.post('/login',
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         )
-
+        const myIp = ip.address()
+            console.log(myIp);
         res.json({token, userId: user.id, firstname: user.firstname, fio: user.fio,  role: user.role})
 
 

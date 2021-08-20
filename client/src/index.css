@@ -31,3 +31,8 @@
     justify-content: center;
     margin: 25% auto;
 }
+
+.dropdown-content {
+    min-width: 100px;
+    top: 65px !important;
+}

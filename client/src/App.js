@@ -26,10 +26,6 @@ function App() {
       <Navbar />
       
         <div className="container">
-        {(isAuthenticated && (
-          <><h2>Добро пожаловать: {fio}</h2>
-          <h3>Ваш статус: {role}</h3></>) 
-        )}
           {routes}
         </div>
       </Router>

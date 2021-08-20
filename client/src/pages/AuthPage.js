@@ -13,6 +13,7 @@ export const AuthPage = () => {
     const [form, setForm] = useState({
         login: '', password: ''
     })
+    
 
     useEffect(() => {
         message(error)
@@ -40,6 +41,7 @@ export const AuthPage = () => {
             const data = await request('api/auth/login', 'POST', {...form})
             auth.login(data.token, data.userId, data.firstname, data.fio, data.role)
             console.log(data)
+
         } catch (e) {
         }
     }
